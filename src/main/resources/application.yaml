@@ -1,1 +1,19 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /api
 
+spring:
+  application:
+    name: kafka-sender
+  kafka:
+    kafka-request-topic: send-kafka-request
+    kafka-error-request-topic: error-send-kafka-request
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+executor:
+  pool-size: 20
+  max-pool-size: 500
+  thread-name-prefix: writer-thread
