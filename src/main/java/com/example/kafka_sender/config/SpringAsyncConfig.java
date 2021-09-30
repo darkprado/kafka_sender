@@ -18,7 +18,7 @@ public class SpringAsyncConfig {
     @Value("${executor.thread-name-prefix}")
     String threadNamePrefix;
 
-    @Bean
+    @Bean(name = "writerThreadPool")
     public TaskExecutor getExecutor() {
         ThreadPoolTaskExecutor exec = new ThreadPoolTaskExecutor();
         exec.setCorePoolSize(poolSize);

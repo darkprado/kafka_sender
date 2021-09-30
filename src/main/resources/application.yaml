@@ -9,6 +9,7 @@ spring:
   kafka:
     kafka-request-topic: send-kafka-request
     kafka-error-request-topic: error-send-kafka-request
+    group-id: write-dto-producer-group
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
